@@ -2,30 +2,55 @@
 <html>
 <head>
   <title>Eight Minutes of Connection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
       background: #f5f0ff;
-      color: #333;
+      color: #2b2b2b;
+      line-height: 1.7;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    nav {
+      background: #6a11cb;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
     }
 
     .hero {
       background-image: url('https://images.unsplash.com/photo-1495954222046-2c427ecb546d');
       background-size: cover;
       background-position: center;
-      height: 80vh;
+      height: 75vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: white;
       padding: 20px;
+      animation: zoomIn 1.5s ease-in-out;
     }
 
-    .hero h1 {
-      font-size: 48px;
-      text-shadow: 2px 2px 8px black;
+    @keyframes zoomIn {
+      from { transform: scale(0.95); }
+      to { transform: scale(1); }
     }
 
     .container {
@@ -36,10 +61,16 @@
 
     .card {
       background: white;
-      padding: 25px;
+      padding: 30px;
       border-radius: 15px;
       box-shadow: 0 0 10px #ddd;
       margin-bottom: 30px;
+      animation: slideUp 1.5s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     .image-row {
@@ -52,6 +83,18 @@
     .image-row img {
       width: 280px;
       border-radius: 15px;
+      transition: transform 0.3s;
+    }
+
+    .image-row img:hover {
+      transform: scale(1.05);
+    }
+
+    .facts {
+      background: #eef2ff;
+      padding: 25px;
+      border-left: 5px solid #6a11cb;
+      margin: 20px 0;
     }
 
     .share-box {
@@ -62,12 +105,12 @@
       text-align: center;
     }
 
-    textarea {
+    textarea, input, select {
       width: 90%;
-      height: 120px;
-      border-radius: 10px;
       padding: 10px;
-      margin-top: 10px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: none;
     }
 
     button {
@@ -87,53 +130,147 @@
       background: #2575fc;
       color: white;
     }
+
+    .quote {
+      font-style: italic;
+      text-align: center;
+      color: #6a11cb;
+      margin: 30px 0;
+    }
+
+    .audio-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      padding: 10px 15px;
+      border-radius: 30px;
+      box-shadow: 0 0 10px #aaa;
+      font-size: 14px;
+    }
   </style>
 </head>
 
 <body>
 
-<div class="hero">
-  <h1>Eight Minutes Can Change a Life</h1>
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-tenderness.mp3" type="audio/mpeg">
+</audio>
+
+<div class="audio-control">
+  <button onclick="playMusic()">Play Music</button>
+  <button onclick="pauseMusic()">Pause</button>
 </div>
 
-<div class="container">
+<script>
+  function playMusic() {
+    document.getElementById("bgMusic").play();
+  }
+  function pauseMusic() {
+    document.getElementById("bgMusic").pause();
+  }
+</script>
 
-  <div class="card">
-    <h2>Why Eight Minutes?</h2>
-    <p>
-      Sometimes people feel alone even when surrounded by others.  
-      This website is built on one simple idea:  
-      <b>just eight minutes of real, honest conversation can remind someone that they matter.</b>  
-      You don’t always need solutions — sometimes you just need to be heard.
-    </p>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#psychology">Psychology</a>
+  <a href="#yourvoice">Your Voice</a>
+</nav>
+
+<!-- PAGE 1 -->
+<div id="home">
+  <div class="hero">
+    <h1>Eight Minutes Can Change a Life</h1>
   </div>
 
-  <div class="card">
-    <h2>Human Connection Matters</h2>
-    <div class="image-row">
-      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
-      <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+  <div class="container">
+    <div class="card">
+      <h2>The Idea of Eight Minutes</h2>
+      <p>
+        In a world that moves too fast, many people feel alone even when they are surrounded by others.  
+        We text, we scroll, we talk — yet we still feel unseen.  
+        This website is built around one simple but powerful idea:  
+        <b>just eight minutes of real, honest, human conversation can remind someone that they matter.</b>
+      </p>
+
+      <p>
+        Eight minutes is not about time — it is about presence.  
+        When two people truly listen without judgment, something healing begins.  
+        You do not always need solutions; sometimes you only need to be heard.
+      </p>
+
+      <div class="quote">
+        “Sometimes, eight minutes of listening can be more healing than eight hours of silence.”
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Human Connection Matters</h2>
+      <div class="image-row">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
+        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+      </div>
     </div>
   </div>
+</div>
 
+<!-- PAGE 2 -->
+<div id="psychology" class="container">
   <div class="card">
-    <h2>Your Eight Minutes</h2>
+    <h2>Why Eight Minutes Matter — The Psychology</h2>
     <p>
-      Imagine you had only eight minutes to talk to someone who truly listened.
-      What would you say? What would you share? What would you need?
+      Loneliness is not always physical — it is emotional.  
+      When people feel unheard, their stress increases and their confidence decreases.
     </p>
-  </div>
 
+    <p>
+      Studies in psychology show that when someone feels truly listened to,  
+      their brain releases calming chemicals that reduce anxiety and fear.  
+      Even a short conversation can create safety and belonging.
+    </p>
+
+    <div class="facts">
+      <h3>Psychological Facts about Connection</h3>
+      <ul>
+        <li>Talking openly reduces emotional pain.</li>
+        <li>Being heard increases self-worth.</li>
+        <li>Listening builds trust.</li>
+        <li>Short meaningful talks can instantly change mood.</li>
+        <li>Humans are naturally social beings.</li>
+      </ul>
+    </div>
+
+    <div class="quote">
+      “Connection is not a luxury — it is a psychological necessity.”
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3 WITH GOOGLE FORM -->
+<div id="yourvoice" class="container">
   <div class="share-box">
-    <h2>Share Your Thoughts</h2>
-    <p>Your words might help someone else feel less alone.</p>
+    <h2>Your Eight Minutes — Share Your Voice</h2>
+    <p>
+      Imagine you have only eight minutes with someone who truly listens.  
+      What would you say? How would you feel? What would you want them to understand?
+    </p>
 
-    <textarea placeholder="Write what you would talk about in your 8 minutes..."></textarea>
-    <br>
-    <button>Submit</button>
+    <p><b>Submit your thoughts below — they will come directly to you on Google.</b></p>
+
+    <iframe 
+      src="https://forms.google.com"
+      width="100%" 
+      height="600" 
+      frameborder="0">
+    </iframe>
+
   </div>
 
+  <div class="quote">
+    “We may not remove all pain from life — but we can make sure nobody carries it alone.”
+  </div>
 </div>
 
 <footer>
@@ -141,4 +278,4 @@
 </footer>
 
 </body>
-</html>
+    </html>
