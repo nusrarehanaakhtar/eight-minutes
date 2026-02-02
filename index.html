@@ -4,102 +4,141 @@
   <title>Eight Minutes of Connection</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f3ecff;
+      font-family: 'Arial', sans-serif;
+      background: #f5f0ff;
       color: #333;
+    }
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1495954222046-2c427ecb546d');
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      text-shadow: 2px 2px 8px black;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #ddd;
+      margin-bottom: 30px;
+    }
+
+    .image-row {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .image-row img {
+      width: 280px;
+      border-radius: 15px;
+    }
+
+    .share-box {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
       text-align: center;
     }
 
-    header {
-      background: linear-gradient(to right, #6a11cb, #2575fc);
-      color: white;
-      padding: 40px;
-    }
-
-    section {
-      padding: 30px;
-      margin: 20px;
-      background: white;
+    textarea {
+      width: 90%;
+      height: 120px;
       border-radius: 10px;
-      box-shadow: 0px 0px 10px #ddd;
+      padding: 10px;
+      margin-top: 10px;
     }
 
     button {
-      background-color: #6a11cb;
-      color: white;
+      background: white;
+      color: #6a11cb;
       border: none;
       padding: 10px 20px;
       font-size: 16px;
+      border-radius: 20px;
       cursor: pointer;
-      border-radius: 5px;
-    }
-
-    textarea, input {
-      width: 80%;
-      padding: 10px;
-      margin: 10px;
+      margin-top: 10px;
     }
 
     footer {
+      text-align: center;
+      padding: 15px;
       background: #2575fc;
       color: white;
-      padding: 10px;
-      margin-top: 20px;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Eight Minutes of Connection</h1>
-  <p>Because sometimes, 8 minutes of real talk can change a life.</p>
-</header>
+<div class="hero">
+  <h1>Eight Minutes Can Change a Life</h1>
+</div>
 
-<section>
-  <h2>Why 8 Minutes?</h2>
-  <p>
-    In a busy world, many people feel lonely even when surrounded by others.  
-    This space reminds us that a simple conversation — even for just eight minutes —  
-    can bring comfort, strength, and hope.
-  </p>
-</section>
+<div class="container">
 
-<section>
-  <h2>Share Your 8 Minutes</h2>
-  <p>Tell us how you feel and what you would talk about in your eight minutes.</p>
+  <div class="card">
+    <h2>Why Eight Minutes?</h2>
+    <p>
+      Sometimes people feel alone even when surrounded by others.  
+      This website is built on one simple idea:  
+      <b>just eight minutes of real, honest conversation can remind someone that they matter.</b>  
+      You don’t always need solutions — sometimes you just need to be heard.
+    </p>
+  </div>
 
-  <form>
-    <input type="text" placeholder="Your name (optional)">
+  <div class="card">
+    <h2>Human Connection Matters</h2>
+    <div class="image-row">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c">
+      <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Your Eight Minutes</h2>
+    <p>
+      Imagine you had only eight minutes to talk to someone who truly listened.
+      What would you say? What would you share? What would you need?
+    </p>
+  </div>
+
+  <div class="share-box">
+    <h2>Share Your Thoughts</h2>
+    <p>Your words might help someone else feel less alone.</p>
+
+    <textarea placeholder="Write what you would talk about in your 8 minutes..."></textarea>
     <br>
-    <textarea rows="4" placeholder="How are you feeling today?"></textarea>
-    <br>
-    <textarea rows="4" placeholder="What would you talk about in your 8 minutes?"></textarea>
-    <br>
-    <button type="submit">Submit</button>
-  </form>
-</section>
+    <button>Submit</button>
+  </div>
 
-<section>
-  <h2>Messages from Psychologists</h2>
-  <p>
-    "Eight minutes of being truly heard can reduce stress and remind a person that they matter."
-  </p>
-</section>
-
-<section>
-  <h2>Stories of Connection</h2>
-  <p>
-    Many people have felt lighter after just one meaningful conversation.
-    Your voice could help someone else feel less alone.
-  </p>
-</section>
+</div>
 
 <footer>
-  <p>© 2026 Eight Minutes of Connection</p>
+  © 2026 Eight Minutes of Connection
 </footer>
 
 </body>
-
 </html>
